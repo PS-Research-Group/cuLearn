@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "culearn"
+version = "0.1.0"
+description = "GPU-accelerated classical ML algorithms built with PyTorch."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Sobhan Nikpour & Paria Ranji"}]
+dependencies = ["torch"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "ruff>=0.5", "black>=24.0"]
+test = ["pytest>=7", "scikit-learn>=1.2", "numpy"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
